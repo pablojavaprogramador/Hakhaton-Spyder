@@ -1,0 +1,11 @@
+Scrapy
+fastapi
+uvicorn
+requests
+pandas
+google-cloud-language
+beautifulsoup4
+textblob
+
+
+uvicorn app.main:app --reload 
