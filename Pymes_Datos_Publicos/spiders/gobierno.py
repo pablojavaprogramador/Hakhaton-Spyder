@@ -3,7 +3,7 @@ import pandas as pd
 from . import utils
 
 class SpiderGobierno(scrapy.Spider):
-    name='quotes'
+    name='gobierno'
     start_urls=['https://pinata2go.mx']
 
     def parse(self,response):

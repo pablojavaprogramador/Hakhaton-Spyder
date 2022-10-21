@@ -1,7 +1,7 @@
 import scrapy
 
 class GoogleMapas(scrapy.Spider):
-    name='quotes'
+    name='googlemaps'
     start_urls=['https://www.google.com.mx/maps']
 
     def parse(self,response):

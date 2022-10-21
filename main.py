@@ -6,6 +6,11 @@ import os
 app = FastAPI()
 
 
+@app.post("/analisis-twiter")
+def execute_analisis_twiter_spider():
+    os.system('python go_spider_twiter.py')
+    return {"Status": "El Spyder Twiter ha sido lanzando"}
+
 @app.post("/analisis-pyme")
 def execute_analisis_pyme_spider():
     os.system('python go_spider_pyme.py')

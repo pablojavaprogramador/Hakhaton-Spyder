@@ -1,7 +1,7 @@
 import scrapy
 
 class PymesSpider(scrapy.Spider):
-    name='quotes'
+    name='pymes'
     start_urls=['https://pinata2go.mx']
 
     def parse(self,response):

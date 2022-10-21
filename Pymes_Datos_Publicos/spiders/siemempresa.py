@@ -1,7 +1,7 @@
 import scrapy
 
 class SiemEmpresas(scrapy.Spider):
-    name='quotes'
+    name='siem'
     start_urls=['https://siem.economia.gob.mx']
 
     def parse(self,response):
