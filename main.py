@@ -2,19 +2,36 @@ from typing import Optional
 
 from fastapi import FastAPI
 import os
+from pydantic import BaseModel
 
+class Url(BaseModel):
+    url: str
+
+    
 app = FastAPI()
 
 
+
+@app.post("/extraccion-links")
+def execute_analisis_extraccion_spider():
+    os.system('python go_recompilacion_links.py')
+    return {"Status": "El Spyder recompilacion Links ha sido lanzando"}   
+
+
+@app.post("/analisis-pyme")
+async def create_item(url: Url):
+    os.system('python go_spider_pyme.py')
+    return {"Status": "El Spyder PYME ha sido lanzando"}
+
+    
 @app.post("/analisis-twiter")
 def execute_analisis_twiter_spider():
     os.system('python go_spider_twiter.py')
     return {"Status": "El Spyder Twiter ha sido lanzando"}
 
-@app.post("/analisis-pyme")
-def execute_analisis_pyme_spider():
-    os.system('python go_spider_pyme.py')
-    return {"Status": "El Spyder PYME ha sido lanzando"}
+ 
+
+
 
 
 @app.post("/analisis-pyme-inegi")

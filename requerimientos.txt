@@ -9,4 +9,7 @@ textblob
 
 
 uvicorn app.main:app --reload 
+uvicorn main:app --reload 
 scrapy crawl gobierno
+
+pip.exe install selenium
